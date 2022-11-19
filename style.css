@@ -1,0 +1,162 @@
+body {
+    font-family: 'Caveat', cursive !important;
+}
+
+.particle-container{
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-content: flex-start;
+    align-items: center;
+    justify-content: flex-start;
+    transition: all 1s;
+
+}
+
+.ended {
+    opacity: 0;
+    transition: 2s;
+}
+
+
+
+
+@keyframes text-spawn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 100%;
+    }
+}
+
+#text {
+    animation: ease-in-out 1s text-spawn;
+    display: flex;
+    flex-direction: column;
+}
+
+@media (min-width: 768px) {
+    .container-custom {
+        max-width: 100%;
+    }
+}
+
+@media (min-width: 1400px) {
+    .container-custom {
+        max-width: 1320px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container-custom {
+        max-width: 1140px;
+    }
+}
+
+.container-custom{
+    --bs-gutter-x: 1.5rem;
+    --bs-gutter-y: 0;
+    width: 100%;
+    padding-right: calc(var(--bs-gutter-x) * .5);
+    padding-left: calc(var(--bs-gutter-x) * .5);
+    margin-right: auto;
+    margin-left: auto;
+}
+
+@keyframes falling {
+    from {
+        transform: scale(1.5);
+        box-shadow: 100px 100px 83px 65px rgba(34, 60, 80, 0.2);
+    }
+    to {
+        transform: scale(1);
+        box-shadow: 0px 0px 83px 65px rgba(34, 60, 80, 0.2);
+    }
+}
+
+.heart-particle{
+    margin-left: 100px;
+    margin-top: 100px;
+    transform-style: preserve-3d;
+    width: 100px;
+    height: 100px;
+    transition: ease-in-out 1s all;
+    animation: ease-in 1s falling;
+}
+
+.heart-c {
+    width: 100px;
+    height: 100px;
+    transition: 1s transform ease-in-out;
+    backface-visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.heart-particle:hover{
+    transform: rotate3d(0,1,0,180deg);
+}
+
+.heart{
+
+
+    transition: ease-in-out 1s;
+
+    background-color: deeppink;
+    height: 100px;
+    width: 100px;
+
+    transform: rotate(45deg);
+}
+
+.back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: rotateY(180deg)  ;
+}
+
+.back > .heart, .back > .heart::before, .back > .heart::after{
+    background: palegoldenrod;
+}
+
+.front {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: rotateY(0deg)  ;
+}
+
+.img{
+    position: absolute;
+    top: -42.5px;
+    left: -42.5px;
+    width: 184px;
+    height: 162px;
+}
+
+.heart::before{
+    overflow: hidden;
+    position: absolute;
+    content:  '';
+    background-color: deeppink;
+    height: 60%;
+    width: 100%;
+    top: -59%;
+    border-radius: 75px 75px 0 0;
+}
+.heart::after{
+    overflow: hidden;
+    position: absolute;
+    content: '';
+    background-color: deeppink;
+    height: 60%;
+    width: 100%;
+    transform: rotate(-90deg);
+    top: 20%;
+    right: 79%;
+    border-radius: 75px 75px 0 0;
+}
