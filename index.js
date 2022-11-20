@@ -19,7 +19,7 @@ let list = [
     ["M15.png", "Люблю свою семью", 0.54,0.22],
     ["M16.png", "Люблю животных", 0.16,0.22],
 ]
-let SchoolMom = ["M9.png", "Люблю животных,<br>своих учеников<br>       вяжу", 0.35, 0.19];
+let SchoolMom = ["M9.png", "Люблю животных,<br>своих учеников<br>       вяжу", 0.35, 0];
 
 let OpeningEnded = false;
 let CardSpawnEnded = false
@@ -65,7 +65,7 @@ function SchoolMomSpawn(){
             console.log(ParticleContainer.firstChild)
             setTimeout(()=>{ParticleContainer.removeChild(i)}, 2000)
 
-        }, 800*f)
+        }, 200*f)
 
     }
     for (let i of TextElement.children) {
@@ -101,7 +101,7 @@ function SchoolMomSpawn(){
         ParticleContainer.insertAdjacentHTML("beforeend", HeartEl)
 
         setTimeout(()=>{
-            const El = "<h1 style=\"text-align: center; font-size: 4em; position: absolute; top:47%; left:28%; backdrop-filter: blur(15px);animation: ease-in-out 1s text-spawn;\">Наша 'вторая мама'<\h1> "
+            const El = "<h1 style=\"text-align: center; font-size: 4em; position: absolute; top:25%; left:28%; backdrop-filter: blur(15px);animation: ease-in-out 1s text-spawn;\">Наша 'вторая мама'<\h1> "
             ParticleContainer.insertAdjacentHTML("beforeend", El)
 
             const Button = "<button type=\"button\" onclick='ToEnding()' class=\"btn btn-outline-danger btn-lg\" style=\"top: 90%; left: 90%; position: absolute; animation: ease-in-out 1s text-spawn; \">\n" +
@@ -110,7 +110,7 @@ function SchoolMomSpawn(){
                 "                </svg>\n" +
                 "            </button>"
 
-            const Photo = "<img class='image' alt='Фото класса'  src='imgs/ClassImage2.png' style='width: 80%;top: 55%;animation: ease-in-out 1s text-spawn;'>"
+            const Photo = "<img class='image' alt='Фото класса'  src='imgs/ClassImage2.png' style='width: 96%;top: 38%;animation: ease-in-out 1s text-spawn;'>"
             ParticleContainer.insertAdjacentHTML("beforeend",Photo)
 
             setTimeout(()=>{ParticleContainer.insertAdjacentHTML("beforeend",Button)}, 2000)
